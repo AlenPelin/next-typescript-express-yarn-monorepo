@@ -8,7 +8,7 @@ function withCustomWebpack(config = {}) {
   const { webpack } = config;
 
   config.webpack = (config, ...rest) => {
-    
+
     // Workaround for issue https://github.com/wellcometrust/next-plugin-transpile-modules/issues/11
     // TODO: upgrade next-plugin-transpile-modules when the issue is fixed
     // TODO: remove this workaround when next-plugin-transpile-modules is upgraded
@@ -22,9 +22,9 @@ function withCustomWebpack(config = {}) {
 
 const plugins = [
   [withTranspileModules, { transpileModules: ["@acme"] }],
-  [withTypescript],  
-  [withCustomBabelConfig, { babelConfigFile: path.resolve("../babel.config.js") }],  
-  [withCustomWebpack],    
+  [withTypescript],
+  [withCustomBabelConfig, { babelConfigFile: path.resolve("../babel.config.js") }],
+  [withCustomWebpack],
 ];
 
 const config = {
