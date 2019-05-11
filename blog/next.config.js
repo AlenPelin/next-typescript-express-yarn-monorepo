@@ -3,6 +3,7 @@ const withPlugins = require('next-compose-plugins');
 const withCustomBabelConfig = require("next-plugin-custom-babel-config");
 const withTypescript = require("@zeit/next-typescript");
 const withTranspileModules = require("next-plugin-transpile-modules");
+const withImages = require("next-images");
 
 function withCustomWebpack(config = {}) {
   const { webpack } = config;
@@ -25,6 +26,7 @@ const plugins = [
   [withTypescript],
   [withCustomBabelConfig, { babelConfigFile: path.resolve("../babel.config.js") }],
   [withCustomWebpack],
+  [withImages],
 ];
 
 const config = {
